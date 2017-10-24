@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<component name="HomeScene" extends="Scene">
+
+    <interface>
+        <field id="gridContent" type="node" alias="GridScreen.content" onChange="onChangeContent" />
+
+        <field id="rowItemSelected" type="intarray" alwaysNotify="true" alias="GridScreen.rowItemSelected" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/screens/HomeScene/HomeScene.brs" />
+
+    <children>
+
+        <GridScreen
+            id="GridScreen"
+            visable="true"
+            translation="[0,0]" />
+
+        <Poster
+            translation="[79, 36]"
+            uri="pkg:/images/overhangLogo.png"
+            height="49"
+            width="156" />
+
+    </children>
+</component>

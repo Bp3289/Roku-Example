@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="GridScreen" extends="Group" initialFocus="RowList">
+    <interface>
+        <field id="content" type="node" alias="RowList.content" onChange="onContentChange" />
+
+        <field id="rowItemSelected" type="intarray" alwaysNotify="true" alias="RowList.rowItemSelected" />
+
+        <field id="itemFocused" type="intarray" alias="RowList.rowItemFocused" onChange="OnItemFocused" />
+
+        <field id="focusedContent" type="node" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/screens/GridScreen/GridScreen.brs" />
+
+    <children>
+
+        <RowList
+            id="RowList"
+            focusBitmapUri="pkg:/images/focus_grid.9.png"
+            translation="[-60, 372]"
+			itemSize="[1327, 218]"
+			numRows="2"
+			itemSpacing="[13, 0]"
+			focusXOffset="[147]"
+			rowFocusAnimationStyle="fixedFocusWrap"
+			rowItemSize="[[262, 147]]"
+			rowItemSpacing="[[16.5, 3]]"
+			showRowLabel="true"
+			showRowCounter="true"
+			rowLabelOffset="[[147, 20]]" />
+
+            <Poster
+			translation="[0, 650]"
+            uri="pkg:/images/BG_dark_down.png"
+            width="2000"
+            height="95" />
+    </children>
+</component>
