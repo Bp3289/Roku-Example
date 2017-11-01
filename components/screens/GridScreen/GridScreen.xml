@@ -15,12 +15,19 @@
 
     <children>
 
+        <FadingBackground
+            id="Background"
+			width="1280"
+			height="720"
+            color="0xAAAAAA"
+            ShadeOpacity="0.8"/>
+
         <RowList
             id="RowList"
             focusBitmapUri="pkg:/images/focus_grid.9.png"
-            translation="[-60, 372]"
+			translation="[-60, 450]"
 			itemSize="[1327, 218]"
-			numRows="2"
+			numRows="1"
 			itemSpacing="[13, 0]"
 			focusXOffset="[147]"
 			rowFocusAnimationStyle="fixedFocusWrap"
@@ -35,5 +42,10 @@
             uri="pkg:/images/BG_dark_down.png"
             width="2000"
             height="95" />
+
+            <Description
+                id="Description"
+			translation="[106, 80]"
+                itemSpacings="[7,17]" />
     </children>
 </component>

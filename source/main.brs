@@ -11,10 +11,6 @@ Sub RunUserInterface()
             TITLE: "First Row"
             ContentList : oneRow
         }
-        {
-            TITLE: "Second Row"
-            ContentList : oneRow
-        }
     ]
     scene.gridContent = ParseXMLContent(list)
 
@@ -33,16 +29,16 @@ End Sub
 Function ParseXMLContent(list as Object)
     RowItems = CreateObject("RoSGNode", "ContentNode")
 
-    for each rowAA in list 
+    for each rows in list 
 
         row = CreateObject("ROSGNode", "ContentNode")
-        row.TITLE = rowAA.Title 
+        row.TITLE = rows.Title 
 
-        for each itemAA in rowAA.ContentList
+        for each items in rows.ContentList
             item = CreateObject("RoSGNode", "ContentNode")
 
-            for each key in itemAA 
-                item[key] = itemAA[key]
+            for each key in items 
+                item[key] = items[key]
             end for
             row.appendChild(item)
         end for
@@ -51,6 +47,7 @@ Function ParseXMLContent(list as Object)
 
     return RowItems
 End Function
+
 
 Function GetApiArray()
     url = CreateObject("roUrlTransfer")
@@ -65,10 +62,10 @@ Function GetApiArray()
 
     for each xmlItem in responseArray
         if xmlItem.getName() = "item"
-            itemAA = xmlItem.GetChildElements()
-            if itemAA <> invalid
+            items = xmlItem.GetChildElements()
+            if items <> invalid
                 item = {}
-                for each xmlItem in itemAA
+                for each xmlItem in items
                     item[xmlItem.getName()] = xmlItem.getText()
                     if xmlItem.getName() = "media:content"
                         item.stream = {url : xmlItem.url}

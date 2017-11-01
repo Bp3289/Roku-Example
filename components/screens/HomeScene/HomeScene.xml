@@ -15,14 +15,18 @@
 
         <GridScreen
             id="GridScreen"
-            visable="true"
+            visible="true"
             translation="[0,0]" />
 
         <Poster
-            translation="[79, 36]"
+            translation="[1070, 8]"
             uri="pkg:/images/overhangLogo.png"
-            height="49"
-            width="156" />
+            height="150"
+            width="200" />
+
+        <DetailScreen 
+            id="DetailScreen"
+            visible="false" />
 
     </children>
 </component>

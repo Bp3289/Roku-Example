@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="DetailScreen" extends="Group" initialFocus="Buttons">
+
+    <interface>
+        <field id="itemSelected" type="integer" alwaysNotify="true" alias="Buttons.itemSelected" onChange="onItemSelected" />
+
+        <field id="videoPlayerVisible" type="bool" alwaysNotify="true" alias="VideoPlayer.visible" onChange="onVideoVisibleChange" />
+
+        <field id="content" type="node" alwaysNotify="true" onChange="OnContentChange" />
+
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/screens/DetailScreen/DetailScreen.brs" />
+
+    <children>
+        
+        <Poster
+            id="Background"
+            width="1280"
+            height="720" />
+        
+        <Rectangle
+            translation="[0,0]"
+            width="1280"
+            height="720"
+            color="0x000000"
+            opacity="0.8" />
+
+        <LabelList
+            id="Buttons"
+            translation="[800, 120]"
+            color="0xFFFFFFFF"
+            focusedColor="0x333333FF"
+            numRows="7"
+            vertFocusAnimationStyle="floatingFocus"
+            itemSize="[250, 35]" />
+
+        <Rectangle
+            id="testRectangle"
+            color="0x000000FF"
+            width="1280"
+            height="251"
+            translation="[0, 462]" />
+
+        <Description
+            id="Description"
+            translation="[430, 475]"
+            itemSpacings="[7, 16]" />
+
+        <Poster
+            id="Poster"
+            translation="[60, 495]"
+            width="317"
+            height="178" />
+
+        <Poster
+            translation="[8, 8]"
+            uri="pkg:/images/overhangLogo.png"
+            width="200"
+            height="150" />
+
+        <Video
+            id="VideoPlayer"
+            visible="false"
+            translation="[0, 0]"
+            width="1280"
+            height="720" />
+        
+    </children>
+</component>
+    
